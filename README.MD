@@ -13,10 +13,13 @@ The repository is structured by semester and subject. Each subject has its own d
 
 ### Semester 2
 
-- **Matlab**: Contains Jupyter notebooks written in Python for Matlab assignments. Examples include Lab-4.ipynb and LabExam.ipynb.
+- **Matlab**: Contains Jupyter notebooks written in Python for Matlab assignments.
 - **C**: Contains C programs for C Lab. An example is q12.c which copies a text file to another.
 
 ### Semester 3
 
-- **OS**: Contains C programs for OS Lab. Examples include 8A.c and 8B.c which simulate single level and two level directory file organization techniques respectively.
-- **Java**: Contains Java programs for Java Lab. Examples include Buffer.java which reads a file and Lab5.java which demonstrates object-oriented programming.
+- **DDCO**: Contains files for DDCO Lab.
+- **DSA**: Contains files for DSA Lab.
+- **Excel**: Contains files for Excel Lab.
+- **Java**: Contains Java programs for Java Lab.
+- **OS**: Contains files for OS Lab.
