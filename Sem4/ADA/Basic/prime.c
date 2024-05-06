@@ -8,7 +8,7 @@ int prime(int n) {
     for (int p = 2;p <= n;p++) {
         A[p] = p;
     }
-    for (int p = 2;p <= (int)sqrt(n);p++) {
+    for (int p = 2;p <= floor(sqrt(n));p++) {
         if (A[p] != 0) {
             int j = p * p;
             while (j <= n) {
