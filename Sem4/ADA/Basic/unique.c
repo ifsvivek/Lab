@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 int unique(int n, int A[]) {
-    for (int i = 0;i < n - 2;i++) {
+    for (int i = 0;i <=n - 2;i++) {
         for (int j = i + 1;j < n - 1;j++) {
             if (A[i] == A[j]) {
                 return 0;
