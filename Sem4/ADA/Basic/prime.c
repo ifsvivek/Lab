@@ -5,9 +5,8 @@
 
 int prime(int n) {
     int A[n+1];
-    for (int p = 2;p <= n;p++) {
+    for (int p = 2;p <= n;p++)
         A[p] = p;
-    }
     for (int p = 2;p <= floor(sqrt(n));p++) {
         if (A[p] != 0) {
             int j = p * p;
