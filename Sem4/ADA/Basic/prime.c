@@ -4,7 +4,7 @@
 #include <math.h>
 
 int prime(int n) {
-    int A[n];
+    int A[n+1];
     for (int p = 2;p <= n;p++) {
         A[p] = p;
     }
