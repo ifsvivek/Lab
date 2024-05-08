@@ -23,3 +23,10 @@ The repository is structured by semester and subject. Each subject has its own d
 - **Excel**: Contains files for Excel Lab.
 - **Java**: Contains Java programs for Java Lab.
 - **OS**: Contains files for OS Lab.
+
+
+### Semester 4
+
+- **DBMS**: Contains files for DBMS Lab.
+- **ADA**: Contains files for ADA Lab.
+
