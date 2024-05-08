@@ -21,9 +21,11 @@ CREATE TABLE Employee(
     COMMISSION INT
 );
 
-CREATE USER 'FirstUser'@'localhost'
+CREATE USER 'FirstUser'@'localhost';
 
 GRANT ALL PRIVILEGES ON FirstDB.Employee TO 'FirstUser'@'localhost';
+
+START TRANSACTION;
 
 INSERT INTO Employee(EMPNO, ENAME, JOB, MANAGER_NO, SAL, COMMISSION) VALUES(1, 'John', 'Manager', 0, 10000, 1000);
 
@@ -31,7 +33,11 @@ INSERT INTO Employee(EMPNO, ENAME, JOB, MANAGER_NO, SAL, COMMISSION) VALUES(2, '
 
 INSERT INTO Employee(EMPNO, ENAME, JOB, MANAGER_NO, SAL, COMMISSION) VALUES(3, 'Jack', 'Manager', 0, 10000, 1000);
 
+SELECT * FROM Employee;
+
 ROLLBACK;
+
+SELECT * FROM Employee;
 
 ALTER TABLE Employee ADD PRIMARY KEY(EMPNO);
 
@@ -45,3 +51,6 @@ INSERT INTO Employee(EMPNO, ENAME, JOB, MANAGER_NO, SAL, COMMISSION) VALUES(5, '
 
 SELECT * FROM Employee;
 
+DROP TABLE Employee;
+
+DROP USER 'FirstUser'@'localhost';
