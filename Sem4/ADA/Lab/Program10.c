@@ -43,18 +43,11 @@ int main() {
     scanf("%d", &n);
     a = (int*)malloc(n * sizeof(int));
     for (i = 0;i < n;i++)
-        a[i] = rand() % 10001;
+        a[i] = rand() % 9999;
     quicksort(a, 0, n - 1);
-    // printf("\nSorted element are\n");
-    // for (i = 0; i < n; i++)
-    //     printf("%d\n", a[i]);
+    printf("\nSorted element are\n");
+    for (i = 0; i < n; i++)
+        printf("%d\n", a[i]);
     printf("\nBasic Operation Count=%d", count);
     free(a);
-    for (size_t i = 0; i < count; i++)
-    {
-        printf("dfgjk");
-        scanf()
-    }
-    
-
 }
