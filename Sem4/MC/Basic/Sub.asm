@@ -1,0 +1,7 @@
+    AREA SUBTRATION, CODE, READONLY
+    ENTRY
+    MOV R1, #0X4
+    MOV R2, #0X2
+    SUB R3, R1, R2
+xs b xs
+    END
