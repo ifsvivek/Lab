@@ -1,0 +1,102 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; DEVELOP AN ALP TO FIND SUM OF FIRST 10 INTERGER NUMBER
+                       
+    2 00000000                 AREA             SUM,CODE,READONLY
+    3 00000000         ENTRY
+    4 00000000         START
+    5 00000000 E3A0500A        MOV              R5,#10
+    6 00000004 E3A04000        MOV              R4,#0
+    7 00000008 E3A01001        MOV              R1,#1
+    8 0000000C         REPEAT
+    9 0000000C E0800001        ADD              R0,R0,R1
+   10 00000010 E2811001        ADD              R1,#1
+   11 00000014 E2555001        SUBS             R5,#1
+   12 00000018 E3550000        CMP              R5,#0
+   13 0000001C 1AFFFFFA        BNE              REPEAT
+   14 00000020 E59F4004        LDR              R4,=RESULT
+   15 00000024 E5840000        STR              R0,[R4]
+   16 00000028 EAFFFFFE 
+                       XSS     B                XSS
+   17 0000002C 00000000        AREA             DATA2,DATA,READWRITE
+   18 00000000 40000000 
+                       RESULT  DCD              0x40000000
+   19 00000004                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\program3.d -o.\program
+3.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Philip
+s --predefine="__EVAL SETA 1" --list=.\program3.lst Program3.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 3 in file Program3.asm
+   Uses
+      None
+Comment: ENTRY unused
+REPEAT 0000000C
+
+Symbol: REPEAT
+   Definitions
+      At line 8 in file Program3.asm
+   Uses
+      At line 13 in file Program3.asm
+Comment: REPEAT used once
+START 00000000
+
+Symbol: START
+   Definitions
+      At line 4 in file Program3.asm
+   Uses
+      None
+Comment: START unused
+SUM 00000000
+
+Symbol: SUM
+   Definitions
+      At line 2 in file Program3.asm
+   Uses
+      None
+Comment: SUM unused
+XSS 00000028
+
+Symbol: XSS
+   Definitions
+      At line 16 in file Program3.asm
+   Uses
+      At line 16 in file Program3.asm
+Comment: XSS used once
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DATA2 00000000
+
+Symbol: DATA2
+   Definitions
+      At line 17 in file Program3.asm
+   Uses
+      None
+Comment: DATA2 unused
+RESULT 00000000
+
+Symbol: RESULT
+   Definitions
+      At line 18 in file Program3.asm
+   Uses
+      At line 14 in file Program3.asm
+Comment: RESULT used once
+2 symbols
+340 symbols in table

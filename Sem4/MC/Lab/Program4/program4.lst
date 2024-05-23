@@ -1,0 +1,133 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; DEVELOP AN ALP TO FIND LARGEST NUMBER IN AN ARRAY OF 3
+                       2 NUMBERS
+    2 00000000         
+    3 00000000                 AREA             LARGEST,CODE,READONLY
+    4 00000000         ENTRY
+    5 00000000         START
+    6 00000000 E3A05006        MOV              R5,#6
+    7 00000004 E59F1044        LDR              R1,=VALUE1
+    8 00000008 E4912004        LDR              R2,[R1],#4
+    9 0000000C         LOOP
+   10 0000000C E4914004        LDR              R4,[R1],#4
+   11 00000010 E1520004        CMP              R2,R4
+   12 00000014 8A000000        BHI              LOOP1
+   13 00000018         
+   14 00000018 E1A02004        MOV              R2,R4
+   15 0000001C         LOOP1
+   16 0000001C E2555001        SUBS             R5,R5,#1
+   17 00000020 E3550000        CMP              R5,#0
+   18 00000024 1AFFFFF8        BNE              LOOP
+   19 00000028 E59F4024        LDR              R4,=RESULT
+   20 0000002C E5842000        STR              R2,[R4]
+   21 00000030 EAFFFFFE 
+                       XSS     B                XSS
+   22 00000034         VALUE1
+   23 00000034 44444444        DCD              0X44444444
+   24 00000038 22222222        DCD              0X22222222
+   25 0000003C 11111111        DCD              0X11111111
+   26 00000040 33333333        DCD              0X33333333
+   27 00000044 AAAAAAAA        DCD              0XAAAAAAAA
+   28 00000048 88888888        DCD              0X88888888
+   29 0000004C 99999999        DCD              0X99999999
+   30 00000050         
+   31 00000050 00000000 
+              00000000         AREA             DATA2,DATA,READWRITE
+   32 00000000 40000000 
+                       RESULT  DCD              0X40000000
+   33 00000004                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\program4.d -o.\program
+4.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Philip
+s --predefine="__EVAL SETA 1" --list=.\program4.lst Program4.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 4 in file Program4.asm
+   Uses
+      None
+Comment: ENTRY unused
+LARGEST 00000000
+
+Symbol: LARGEST
+   Definitions
+      At line 3 in file Program4.asm
+   Uses
+      None
+Comment: LARGEST unused
+LOOP 0000000C
+
+Symbol: LOOP
+   Definitions
+      At line 9 in file Program4.asm
+   Uses
+      At line 18 in file Program4.asm
+Comment: LOOP used once
+LOOP1 0000001C
+
+Symbol: LOOP1
+   Definitions
+      At line 15 in file Program4.asm
+   Uses
+      At line 12 in file Program4.asm
+Comment: LOOP1 used once
+START 00000000
+
+Symbol: START
+   Definitions
+      At line 5 in file Program4.asm
+   Uses
+      None
+Comment: START unused
+VALUE1 00000034
+
+Symbol: VALUE1
+   Definitions
+      At line 22 in file Program4.asm
+   Uses
+      At line 7 in file Program4.asm
+Comment: VALUE1 used once
+XSS 00000030
+
+Symbol: XSS
+   Definitions
+      At line 21 in file Program4.asm
+   Uses
+      At line 21 in file Program4.asm
+Comment: XSS used once
+7 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DATA2 00000000
+
+Symbol: DATA2
+   Definitions
+      At line 31 in file Program4.asm
+   Uses
+      None
+Comment: DATA2 unused
+RESULT 00000000
+
+Symbol: RESULT
+   Definitions
+      At line 32 in file Program4.asm
+   Uses
+      At line 19 in file Program4.asm
+Comment: RESULT used once
+2 symbols
+342 symbols in table

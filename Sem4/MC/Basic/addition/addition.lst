@@ -1,0 +1,42 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             ADDITION, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000 E3A00004        MOV              R0,#0x4
+    4 00000004 E3A01005        MOV              R1,#0x5
+    5 00000008 E0802001        ADD              R2,R0,R1
+    6 0000000C         
+    7 0000000C EAFFFFFE 
+                       XS      b                XS
+    8 00000010                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\addition.d -o.\additio
+n.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Philip
+s --predefine="__EVAL SETA 1" --list=.\addition.lst addition.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ADDITION 00000000
+
+Symbol: ADDITION
+   Definitions
+      At line 1 in file addition.asm
+   Uses
+      None
+Comment: ADDITION unused
+XS 0000000C
+
+Symbol: XS
+   Definitions
+      At line 7 in file addition.asm
+   Uses
+      At line 7 in file addition.asm
+Comment: XS used once
+2 symbols
+333 symbols in table

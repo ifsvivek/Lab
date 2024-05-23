@@ -1,11 +1,3 @@
 **/*.exe
 **/*.class
 .vscode
-*.dep
-*.bak
-*._ia
-*.lnp
-*.map
-*.lst
-*.o
-*.d
