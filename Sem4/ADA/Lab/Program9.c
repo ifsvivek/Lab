@@ -29,9 +29,9 @@ void main() {
     for (i = 0;i < n;i++)
         A[i] = rand() % 1001;
     SelectionSort(A, n);
-    // printf("Sorted Elements are\n");
-    // for (i = 0;i < n;i++)
-    //     printf("%d ", A[i]);
+    printf("Sorted Elements are\n");
+    for (i = 0;i < n;i++)
+        printf("%d ", A[i]);
     printf("\nBasic Operation Count= %d\n", count);
     free(A);
 
