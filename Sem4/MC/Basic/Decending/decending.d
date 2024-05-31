@@ -1,0 +1,1 @@
+.\decending.o: decending.asm

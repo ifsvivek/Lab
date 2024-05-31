@@ -1,2 +1,2 @@
 Dependencies for Project 'multiplication', Target 'Target 1': (DO NOT MODIFY !)
-F (.\multiplication.asm)(0x66477F2A)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\multiplication.lst --xref -o .\multiplication.o --depend .\multiplication.d)
+F (.\multiplication.asm)(0x6659791C)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\multiplication.lst --xref -o .\multiplication.o --depend .\multiplication.d)
