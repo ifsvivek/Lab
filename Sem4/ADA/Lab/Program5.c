@@ -31,7 +31,7 @@ void souceremoval() {
 }
 
 void main() {
-    printf("Enter the no. of vetices: ");
+    printf("Enter the no. of vertices: ");
     scanf("%d", &n);
     printf("Enter the adj matrix\n");
     for (int i = 0;i < n;i++) {
