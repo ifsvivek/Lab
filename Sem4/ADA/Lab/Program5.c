@@ -18,12 +18,12 @@ void souceremoval() {
             if (removed[i] == 0 && indegree[i] == 0)
                 break;
         }
-        if (i = n) {
+        if (i == n) {
             printf("Graph is cyclic\nNo solution\n");
             return;
         }
         printf("%d\t", i);
-        removed[i] = 0;
+        removed[i] = 1;
         for (int k = 0;k < n;k++)
             cost[i][k] = 0;
     }
