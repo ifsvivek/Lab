@@ -1,0 +1,2 @@
+Dependencies for Project 'fact', Target 'Target 1': (DO NOT MODIFY !)
+F (.\fact.asm)(0x6662B324)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\fact.lst --xref -o .\fact.o --depend .\fact.d)

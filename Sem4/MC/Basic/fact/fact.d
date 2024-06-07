@@ -1,0 +1,1 @@
+.\fact.o: fact.asm
