@@ -15,10 +15,10 @@ void warshall(int r[][10], int n) {
 }
 
 int main() {
-    int n;
+    int n, r[10][10];
     printf("Enter the number of vertices: ");
     scanf("%d", &n);
-    int r[10][10];
+
     printf("Enter the adjacency matrix: \n");
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++)

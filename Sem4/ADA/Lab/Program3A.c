@@ -19,10 +19,9 @@ void floyds(int d[][10], int n) {
 }
 
 int main() {
-    int n;
+    int n,d[10][10];
     printf("Enter the number of vertices: ");
     scanf("%d", &n);
-    int d[10][10];
     printf("Enter the weights: \n");
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++)
