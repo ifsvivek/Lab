@@ -6,6 +6,7 @@ int min(int a, int b) {
 
 void floyds(int d[][10], int n) {
     for (int k = 0; k < n; k++) {
+        printf("\nD(%d)\n", k);
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 d[i][j] = min(d[i][j], d[i][k] + d[k][j]);
