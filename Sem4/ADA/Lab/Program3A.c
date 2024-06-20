@@ -22,7 +22,7 @@ int main() {
     int n;
     printf("Enter the number of vertices: ");
     scanf("%d", &n);
-    int d[n][n];
+    int d[10][10];
     printf("Enter the weights: \n");
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++)
