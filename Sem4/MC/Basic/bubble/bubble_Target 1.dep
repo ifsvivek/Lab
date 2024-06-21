@@ -1,0 +1,5 @@
+Dependencies for Project 'bubble', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Startup.s)(0x532C14EA)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
+F (.\bubble.c)(0x667529C6)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\bubble.o --omf_browse .\bubble.crf --depend .\bubble.d)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C7E87C)
+I (C:\Keil\ARM\Inc\Philips\lpc214x.h)(0x532C1500)
