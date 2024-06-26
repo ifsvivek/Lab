@@ -26,7 +26,7 @@ The repository is structured by semester and subject. Each subject has its own d
 
 ### Semester 4
 
-- DBMS
+- MC
 - ADA
 - SQL
 - UIUX
