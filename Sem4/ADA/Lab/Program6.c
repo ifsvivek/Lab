@@ -38,12 +38,12 @@ int main() {
     int n, m, i;
     printf("Enter the number of items: ");
     scanf("%d", &n);
-    int w[n], p[n]; // Adjusted the size to n, as we will use 0-based indexing
+    int w[n], p[n];
     printf("Enter the weights of the items: ");
-    for (i = 0; i < n; i++) // Start loop from 0 for 0-based indexing
+    for (i = 0; i < n; i++)
         scanf("%d", &w[i]);
     printf("Enter the profits of the items: ");
-    for (i = 0; i < n; i++) // Start loop from 0 for 0-based indexing
+    for (i = 0; i < n; i++)
         scanf("%d", &p[i]);
     printf("Enter the capacity of the knapsack: ");
     scanf("%d", &m);
