@@ -8,13 +8,12 @@ void DPknapsack(int n, int m, int w[], int p[]) {
     int i, j, V[n + 1][m + 1];
     for (i = 0; i <= n; i++) {
         for (j = 0; j <= m; j++) {
-            if (i == 0 || j == 0) {
+            if (i == 0 || j == 0)
                 V[i][j] = 0;
-            } else if (j < w[i]) {
+            else if (j < w[i])
                 V[i][j] = V[i - 1][j];
-            } else {
+            else
                 V[i][j] = max(V[i - 1][j], V[i - 1][j - w[i]] + p[i]);
-            }
             printf("%d\t", V[i][j]);
         }
         printf("\n");
