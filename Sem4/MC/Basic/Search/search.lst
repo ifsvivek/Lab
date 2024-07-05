@@ -1,0 +1,123 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             SEARCH, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         
+    4 00000000 E59F0030        LDR              R0, =AVALUE
+    5 00000004 E3A0100C        MOV              R1, #12
+    6 00000008 E59F202C        LDR              R2, =EVALUE
+    7 0000000C         
+    8 0000000C         search_loop
+    9 0000000C E3510000        CMP              R1, #0
+   10 00000010 0A000006        BEQ              end_search
+   11 00000014 E4903004        LDR              R3, [R0], #4
+   12 00000018 E1530002        CMP              R3, R2
+   13 0000001C 0A000001        BEQ              element_found
+   14 00000020 E2411001        SUB              R1, R1, #1
+   15 00000024 EAFFFFF8        B                search_loop
+   16 00000028         
+   17 00000028         element_found
+   18 00000028 E3A04001        MOV              R4, #1
+   19 0000002C EAFFFFFF        B                end_search
+   20 00000030         
+   21 00000030         end_search
+   22 00000030 E1A00004        MOV              R0, R4
+   23 00000034 EAFFFFFE        B                .
+   24 00000038         
+   25 00000038 00000000 
+              00000000         AREA             DATA1, DATA, READWRITE
+   26 00000000         AVALUE
+   27 00000000 00000001        DCD              0X00000001
+   28 00000004 00000002        DCD              0X00000002
+   29 00000008 00000003        DCD              0X00000003
+   30 0000000C 00000004        DCD              0X00000004
+   31 00000010 00000005        DCD              0X00000005
+   32 00000014 00000006        DCD              0X00000006
+   33 00000018 00000007        DCD              0X00000007
+   34 0000001C 00000008        DCD              0X00000008
+   35 00000020 00000009        DCD              0X00000009
+   36 00000024 0000000A        DCD              0X0000000A
+   37 00000028         
+   38 00000028         EVALUE
+   39 00000028 00000005        DCD              0X00000005
+   40 0000002C         
+   41 0000002C                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\search.d -o.\search.o 
+-IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Philips --
+predefine="__EVAL SETA 1" --list=.\search.lst Search.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+SEARCH 00000000
+
+Symbol: SEARCH
+   Definitions
+      At line 1 in file Search.asm
+   Uses
+      None
+Comment: SEARCH unused
+element_found 00000028
+
+Symbol: element_found
+   Definitions
+      At line 17 in file Search.asm
+   Uses
+      At line 13 in file Search.asm
+Comment: element_found used once
+end_search 00000030
+
+Symbol: end_search
+   Definitions
+      At line 21 in file Search.asm
+   Uses
+      At line 10 in file Search.asm
+      At line 19 in file Search.asm
+
+search_loop 0000000C
+
+Symbol: search_loop
+   Definitions
+      At line 8 in file Search.asm
+   Uses
+      At line 15 in file Search.asm
+Comment: search_loop used once
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+AVALUE 00000000
+
+Symbol: AVALUE
+   Definitions
+      At line 26 in file Search.asm
+   Uses
+      At line 4 in file Search.asm
+Comment: AVALUE used once
+DATA1 00000000
+
+Symbol: DATA1
+   Definitions
+      At line 25 in file Search.asm
+   Uses
+      None
+Comment: DATA1 unused
+EVALUE 00000028
+
+Symbol: EVALUE
+   Definitions
+      At line 38 in file Search.asm
+   Uses
+      At line 6 in file Search.asm
+Comment: EVALUE used once
+3 symbols
+340 symbols in table
