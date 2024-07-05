@@ -9,7 +9,7 @@ search_loop
     CMP R1, #0
     BEQ end_search
     LDR R3, [R0], #4
-    CMP R3, R2
+    CMP R1, R2
     BEQ element_found
     SUB R1, R1, #1
     B search_loop

@@ -15,7 +15,7 @@ ARM Macro Assembler    Page 1
     9 00000010 E3510000        CMP              R1, #0
    10 00000014 0A000005        BEQ              end_search
    11 00000018 E4903004        LDR              R3, [R0], #4
-   12 0000001C E1530002        CMP              R3, R2
+   12 0000001C E1510002        CMP              R1, R2
    13 00000020 0A000001        BEQ              element_found
    14 00000024 E2411001        SUB              R1, R1, #1
    15 00000028 EAFFFFF8        B                search_loop
