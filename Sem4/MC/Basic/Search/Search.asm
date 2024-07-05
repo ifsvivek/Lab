@@ -1,41 +1,44 @@
-    AREA SEARCH, CODE, READONLY
+    AREA SearchArray, CODE, READONLY
     ENTRY
 
-    LDR R0, =AVALUE
-    MOV R1, #12
-    LDR R2, =EVALUE
+; Constants
+ARRAY_START    EQU     0x40000000  ; Starting address of the array in memory
+ARRAY_LENGTH   EQU     10          ; Length of the array (number of elements)
+TARGET         EQU     0x00000008  ; Element to search for
 
-search_loop
-    CMP R1, #0
-    BEQ end_search
-    LDR R3, [R0], #4
-    CMP R3, R2
-    BEQ element_found
-    SUB R1, R1, #1
-    B search_loop
+; Registers
+; r0 - current array element
+; r1 - target element
+; r2 - index
+; r3 - array base address
+; r4 - temporary register (not used in this version)
+; r5 - array length
 
-element_found
-    MOV R4, #1
-    B end_search
+    LDR     r1, =TARGET             ; Load the target value into r1
+    LDR     r3, =ARRAY_START        ; Load the base address of the array into r3
+    MOV     r2, #0                  ; Initialize index to 0
+    MOV     r5, #ARRAY_LENGTH       ; Load the array length into r5
 
-end_search
-    MOV R0, R4
-    B .
+Loop
+    CMP     r2, r5                  ; Compare index with array length
+    BEQ     NotFound                ; If index == array length, target not found
+    LDR     r0, [r3, r2, LSL #2]    ; Load the current array element into r0
+    CMP     r0, r1                  ; Compare current element with target
+    BEQ     Found                   ; If equal, target found
+    ADD     r2, r2, #1              ; Increment index
+    B       Loop                    ; Repeat the loop
 
-    AREA DATA1, DATA, READWRITE
-AVALUE
-    DCD 0X00000001
-    DCD 0X00000002
-    DCD 0X00000003
-    DCD 0X00000004
-    DCD 0X00000005
-    DCD 0X00000006
-    DCD 0X00000007
-    DCD 0X00000008
-    DCD 0X00000009
-    DCD 0X0000000A
+Found
+    ; Target found
+    MOV     r0, r2                  ; Move the index of the found element into r0
+    B       End                     ; Jump to end of program
 
-EVALUE
-    DCD 0X00000005
+NotFound
+    ; Target not found
+    MOV     r0, #-1                 ; Move -1 into r0 to indicate not found
+
+End
+    ; Here, r0 will have the index of the found element or -1 if not found
+    B       End                     ; End of program, infinite loop
 
     END
