@@ -4,85 +4,42 @@
 ARM Macro Assembler    Page 1 
 
 
-    1 00000000                 AREA             SearchArray, CODE, READONLY
-    2 00000000                 ENTRY
-    3 00000000         
-    4 00000000         ; Constants
-    5 00000000 40000000 
-                       ARRAY_START
-                               EQU              0x40000000  ; Starting address 
-                                                            of the array in mem
-                                                            ory
-    6 00000000 0000000A 
-                       ARRAY_LENGTH
-                               EQU              10          ; Length of the arr
-                                                            ay (number of eleme
-                                                            nts)
-    7 00000000 00000008 
-                       TARGET  EQU              0x00000008  ; Element to search
-                                                             for
-    8 00000000         
-    9 00000000         ; Registers
-   10 00000000         ; r0 - current array element
-   11 00000000         ; r1 - target element
-   12 00000000         ; r2 - index
-   13 00000000         ; r3 - array base address
-   14 00000000         ; r4 - temporary register (not used in this version)
-   15 00000000         ; r5 - array length
-   16 00000000         
-   17 00000000 E3A01008        LDR              r1, =TARGET ; Load the target v
-                                                            alue into r1
-   18 00000004 E3A03101        LDR              r3, =ARRAY_START ; Load the bas
-                                                            e address of the ar
-                                                            ray into r3
-   19 00000008 E3A02000        MOV              r2, #0      ; Initialize index 
-                                                            to 0
-   20 0000000C E3A0500A        MOV              r5, #ARRAY_LENGTH ; Load the ar
-                                                            ray length into r5
-   21 00000010         
-   22 00000010         Loop
-   23 00000010 E1520005        CMP              r2, r5      ; Compare index wit
-                                                            h array length
-   24 00000014 0A000006        BEQ              NotFound    ; If index == array
-                                                             length, target not
-                                                             found
-   25 00000018 E7930102        LDR              r0, [r3, r2, LSL #2] ; Load the
-                                                             current array elem
-                                                            ent into r0
-   26 0000001C E1500001        CMP              r0, r1      ; Compare current e
-                                                            lement with target
-   27 00000020 0A000001        BEQ              Found       ; If equal, target 
-                                                            found
-   28 00000024 E2822001        ADD              r2, r2, #1  ; Increment index
-   29 00000028 EAFFFFF8        B                Loop        ; Repeat the loop
-   30 0000002C         
-   31 0000002C         Found
-   32 0000002C         ; Target found
-   33 0000002C E1A00002        MOV              r0, r2      ; Move the index of
-                                                             the found element 
-                                                            into r0
-   34 00000030 EA000000        B                End         ; Jump to end of pr
-                                                            ogram
-
-
-
-ARM Macro Assembler    Page 2 
-
-
-   35 00000034         
-   36 00000034         NotFound
-   37 00000034         ; Target not found
-   38 00000034 E3E00000        MOV              r0, #-1     ; Move -1 into r0 t
-                                                            o indicate not foun
-                                                            d
-   39 00000038         
-   40 00000038         End
-   41 00000038         ; Here, r0 will have the index of the found element or -
-                       1 if not found
-   42 00000038 EAFFFFFE        B                End         ; End of program, i
-                                                            nfinite loop
-   43 0000003C         
-   44 0000003C                 END
+    1 00000000                 AREA             SEARCH, CODE, READONLY
+    2 00000000         ENTRY
+    3 00000000 E59F0030        LDR              R0, =AVALUE
+    4 00000004 E3A0100A        MOV              R1, #10
+    5 00000008 E3A02005        MOV              R2, #0X00000005
+    6 0000000C E3A04000        MOV              R4, #0
+    7 00000010         
+    8 00000010         search_loop
+    9 00000010 E3510000        CMP              R1, #0
+   10 00000014 0A000005        BEQ              end_search
+   11 00000018 E4903004        LDR              R3, [R0], #4
+   12 0000001C E1530002        CMP              R3, R2
+   13 00000020 0A000001        BEQ              element_found
+   14 00000024 E2411001        SUB              R1, R1, #1
+   15 00000028 EAFFFFF8        B                search_loop
+   16 0000002C         
+   17 0000002C         element_found
+   18 0000002C E3A04001        MOV              R4, #1
+   19 00000030         
+   20 00000030         end_search
+   21 00000030 E1A00004        MOV              R0, R4
+   22 00000034 EAFFFFFE        B                .
+   23 00000038         
+   24 00000038 00000000        AREA             DATA1, DATA, READWRITE
+   25 00000000         AVALUE
+   26 00000000 00000001        DCD              0X00000001
+   27 00000004 00000002        DCD              0X00000002
+   28 00000008 00000003        DCD              0X00000003
+   29 0000000C 00000004        DCD              0X00000004
+   30 00000010 00000005        DCD              0X00000005
+   31 00000014 00000006        DCD              0X00000006
+   32 00000018 00000007        DCD              0X00000007
+   33 0000001C 00000008        DCD              0X00000008
+   34 00000020 00000009        DCD              0X00000009
+   35 00000024 0000000A        DCD              0X0000000A
+   36 00000028                 END
 Command Line: --debug --xref --apcs=interwork --depend=.\search.d -o.\search.o 
 -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Philips --
 predefine="__EVAL SETA 1" --list=.\search.lst Search.asm
@@ -92,77 +49,68 @@ predefine="__EVAL SETA 1" --list=.\search.lst Search.asm
 ARM Macro Assembler    Page 1 Alphabetic symbol ordering
 Relocatable symbols
 
-End 00000038
+ENTRY 00000000
 
-Symbol: End
+Symbol: ENTRY
    Definitions
-      At line 40 in file Search.asm
+      At line 2 in file Search.asm
    Uses
-      At line 34 in file Search.asm
-      At line 42 in file Search.asm
+      None
+Comment: ENTRY unused
+SEARCH 00000000
 
-Found 0000002C
-
-Symbol: Found
-   Definitions
-      At line 31 in file Search.asm
-   Uses
-      At line 27 in file Search.asm
-Comment: Found used once
-Loop 00000010
-
-Symbol: Loop
-   Definitions
-      At line 22 in file Search.asm
-   Uses
-      At line 29 in file Search.asm
-Comment: Loop used once
-NotFound 00000034
-
-Symbol: NotFound
-   Definitions
-      At line 36 in file Search.asm
-   Uses
-      At line 24 in file Search.asm
-Comment: NotFound used once
-SearchArray 00000000
-
-Symbol: SearchArray
+Symbol: SEARCH
    Definitions
       At line 1 in file Search.asm
    Uses
       None
-Comment: SearchArray unused
+Comment: SEARCH unused
+element_found 0000002C
+
+Symbol: element_found
+   Definitions
+      At line 17 in file Search.asm
+   Uses
+      At line 13 in file Search.asm
+Comment: element_found used once
+end_search 00000030
+
+Symbol: end_search
+   Definitions
+      At line 20 in file Search.asm
+   Uses
+      At line 10 in file Search.asm
+Comment: end_search used once
+search_loop 00000010
+
+Symbol: search_loop
+   Definitions
+      At line 8 in file Search.asm
+   Uses
+      At line 15 in file Search.asm
+Comment: search_loop used once
 5 symbols
 
 
 
 ARM Macro Assembler    Page 1 Alphabetic symbol ordering
-Absolute symbols
+Relocatable symbols
 
-ARRAY_LENGTH 0000000A
+AVALUE 00000000
 
-Symbol: ARRAY_LENGTH
+Symbol: AVALUE
    Definitions
-      At line 6 in file Search.asm
+      At line 25 in file Search.asm
    Uses
-      At line 20 in file Search.asm
-Comment: ARRAY_LENGTH used once
-ARRAY_START 40000000
+      At line 3 in file Search.asm
+Comment: AVALUE used once
+DATA1 00000000
 
-Symbol: ARRAY_START
+Symbol: DATA1
    Definitions
-      At line 5 in file Search.asm
+      At line 24 in file Search.asm
    Uses
-      At line 18 in file Search.asm
-Comment: ARRAY_START used once
-TARGET 00000008
-
-Symbol: TARGET
-   Definitions
-      At line 7 in file Search.asm
-   Uses
-      At line 17 in file Search.asm
-Comment: TARGET used once
-3 symbols
-339 symbols in table
+      None
+Comment: DATA1 unused
+2 symbols
+340 symbols in table
