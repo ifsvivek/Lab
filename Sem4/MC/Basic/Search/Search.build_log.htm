@@ -10,28 +10,31 @@ Project File Date:  07/05/2024
 Build target 'Target 1'
 assembling Search.asm...
 linking...
-Program Size: Code=60 RO-data=0 RW-data=0 ZI-data=0  
+Program Size: Code=60 RO-data=0 RW-data=40 ZI-data=0  
 ".\Search.axf" - 0 Error(s), 0 Warning(s).
-
-Area directive missing
-Search.asm(2): warning: A1088W: Faking declaration of area AREA |$$$$$$$|
-".\Search.axf" - 2 Error(s), 1 Warning(s).
+m(20): error: A1167E: Invalid line start 
+Search.asm(25): error: A1167E: Invalid line start 
+".\Search.axf" - 4 Error(s), 0 Warning(s).
 Target not created
-warning and 1 error messages.
-".\Search.axf" - 1 Error(s), 1 Warning(s).
+m(18): error: A1167E: Invalid line start 
+Search.asm(21): error: A1167E: Invalid line start 
+Search.asm(26): error: A1167E: Invalid line start 
+".\Search.axf" - 6 Error(s), 1 Warning(s).
 Target not created
-asm(8): error: A1163E: Unknown opcode end_search , expecting opcode or Macro
-Search.asm(9): error: A1163E: Unknown opcode R3, , expecting opcode or Macro
-Search.asm(10): error: A1163E: Unknown opcode R3, , expecting opcode or Macro
-Search.asm(11): error: A1163E: Unknown opcode element_found , expecting opcode or Macro
-Search.asm(12): error: A1163E: Unknown opcode R1, , expecting opcode or Macro
-Search.asm(13): error: A1163E: Unknown opcode search_loop , expecting opcode or Macro
-Search.asm(14): error: A1167E: Invalid line start 
-Search.asm(15): error: A1163E: Unknown opcode R4, , expecting opcode or Macro
-Search.asm(16): error: A1163E: Unknown opcode end_search , expecting opcode or Macro
-Search.asm(17): error: A1167E: Invalid line start 
-Search.asm(18): error: A1163E: Unknown opcode R0, , expecting opcode or Macro
-Search.asm(21): error: A1163E: Unknown opcode DATA, , expecting opcode or Macro
-Search.asm(25): warning: A1447W: Missing END directive at end of file, but found a label named END
-".\Search.axf" - 17 Error(s), 1 Warning(s).
+pected operator equal to or equivalent to /
+Search.asm(9): error: A1167E: Invalid line start 
+Search.asm(10): error: A1517E: Unexpected operator equal to or equivalent to /
+Search.asm(11): error: A1517E: Unexpected operator equal to or equivalent to /
+Search.asm(12): error: A1517E: Unexpected operator equal to or equivalent to /
+Search.asm(13): error: A1106E: Missing comma
+Search.asm(14): error: A1517E: Unexpected operator equal to or equivalent to /
+Search.asm(15): error: A1517E: Unexpected operator equal to or equivalent to /
+Search.asm(16): error: A1517E: Unexpected operator equal to or equivalent to /
+Search.asm(18): error: A1167E: Invalid line start 
+Search.asm(19): error: A1517E: Unexpected operator equal to or equivalent to /
+Search.asm(21): error: A1167E: Invalid line start 
+Search.asm(22): error: A1106E: Missing comma
+Search.asm(23): error: A1517E: Unexpected operator equal to or equivalent to /
+Search.asm(26): error: A1167E: Invalid line start 
+".\Search.axf" - 20 Error(s), 1 Warning(s).
 Target not created
