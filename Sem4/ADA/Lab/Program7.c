@@ -7,7 +7,7 @@ void greedy_ks(int n, int m, float p[], float w[]) {
     for (count = 0; count < n; count++) {
         max = 0;
         for (i = 0; i < n; i++) {
-            if (((p[i] / w[i]) >= max)) {
+            if (((p[i] / w[i]) > max)) {
                 k = i;
                 max = p[i] / w[i];
             }
