@@ -17,7 +17,7 @@ void kruskal(int cost[][10], int n) {
                 }
         while (par[u] != -1)
             u = par[u];
-        while (par[v] !=-1)
+        while (par[v] != -1)
             v = par[v];
 
         if (u != v) {
