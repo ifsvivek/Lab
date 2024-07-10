@@ -22,7 +22,7 @@ void DPknapsack(int n, int m, int w[], int p[]) {
     printf("Items selected: ");
     while (m!=0) {
         if (V[n][m] != V[n - 1][m]) {
-            printf("%d ", n);
+            printf("%d\t", n);
             m -= w[n - 1];
         }
         n--;
