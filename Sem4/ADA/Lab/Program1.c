@@ -15,9 +15,9 @@ void kruskal(int cost[][10], int n) {
                     a = u = i;
                     b = v = j;
                 }
-        while (par[u] > 0)
+        while (par[u] != -1)
             u = par[u];
-        while (par[v] > 0)
+        while (par[v] !=-1)
             v = par[v];
 
         if (u != v) {
