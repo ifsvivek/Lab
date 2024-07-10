@@ -1,7 +1,7 @@
 #include<stdio.h>   
 
 void kruskal(int cost[][10], int n) {
-    int par[n + 1], a, b, u, v, i, j, min, mincost = 0, ec = 0;
+    int par[n], a, b, u, v, i, j, min, mincost = 0, ec = 0;
 
     for (i = 0; i < n; i++)
         par[i] = -1;
