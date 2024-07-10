@@ -3,14 +3,14 @@
 void kruskal(int cost[][10], int n) {
     int par[n + 1], a, b, u, v, i, j, min, mincost = 0, ec = 0;
 
-    for (i = 1; i <= n; i++)
+    for (i = 0; i < n; i++)
         par[i] = -1;
 
     while (ec < n - 1) {
         min = 999;
-        for (i = 1; i <= n; i++)
-            for (j = 1; j <= n; j++)
-                if (cost[i][j] < min && cost[i][j] != 0) {
+        for (i = 0; i < n; i++)
+            for (j = 0; j < n; j++)
+                if (cost[i][j] < min) {
                     min = cost[i][j];
                     a = u = i;
                     b = v = j;
@@ -37,8 +37,8 @@ int main() {
     scanf("%d", &n);
 
     printf("Enter the cost matrix:\n");
-    for (i = 1; i <= n; i++)
-        for (j = 1; j <= n; j++)
+    for (i = 0; i < n; i++)
+        for (j = 0; j < n; j++)
             scanf("%d", &cost[i][j]);
 
     kruskal(cost, n);
