@@ -20,18 +20,13 @@ void DPknapsack(int n, int m, int w[], int p[]) {
     }
     printf("Optimal profit: %d\n", V[n][m]);
     printf("Items selected: ");
-    int res = V[n][m];
-    j = m;
-    for (i = n; i > 0 && res > 0; i--) {
-        if (res == V[i - 1][j])
-            continue;
-        else {
-            printf("%d ", i);
-            res -= p[i - 1];
-            j -= w[i - 1];
+    while (m!=0) {
+        if (V[n][m] != V[n - 1][m]) {
+            printf("%d ", n);
+            m -= w[n - 1];
         }
+        n--;
     }
-    printf("\n");
 }
 
 int main() {
