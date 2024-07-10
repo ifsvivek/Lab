@@ -23,7 +23,7 @@ void kruskal(int cost[][10], int n) {
         if (u != v) {
             printf("edge from %d to  %d with cost %d is selected\n", a, b, min);
             mincost += min;
-            par[v] = u;
+            par[a] = b;
             ec++;
         }
         cost[a][b] = cost[b][a] = 999;
