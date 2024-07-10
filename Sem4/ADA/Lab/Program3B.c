@@ -20,9 +20,8 @@ int main() {
     scanf("%d", &n);
 
     printf("Enter the adjacency matrix: \n");
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
         for (int j = 0; j < n; j++)
             scanf("%d", &r[i][j]);
-    }
     warshall(r, n);
 }
