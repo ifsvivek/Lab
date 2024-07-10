@@ -20,7 +20,7 @@ void DPknapsack(int n, int m, int w[], int p[]) {
     }
     printf("Optimal profit: %d\n", V[n][m]);
     printf("Items selected:\n");
-    while (m!=0) {
+    while (m != 0) {
         if (V[n][m] != V[n - 1][m]) {
             printf("%d\t", n);
             m -= w[n - 1];
@@ -29,11 +29,10 @@ void DPknapsack(int n, int m, int w[], int p[]) {
     }
 }
 
-int main() {
-    int n, m, i;
+void main() {
+    int n, m, i, w[10], p[10];
     printf("Enter the number of items: ");
     scanf("%d", &n);
-    int w[n], p[n];
     printf("Enter the weights of the items: ");
     for (i = 0; i < n; i++)
         scanf("%d", &w[i]);
@@ -43,5 +42,4 @@ int main() {
     printf("Enter the capacity of the knapsack: ");
     scanf("%d", &m);
     DPknapsack(n, m, w, p);
-    return 0;
 }
