@@ -23,10 +23,7 @@ int nqueen(int n) {
                 printf("\nSolution %d:\n", count);
                 for (int i = 1; i <= n; i++) {
                     for (int j = 1; j <= n; j++) {
-                        if (x[i] == j)
-                            printf("Q\t");
-                        else
-                            printf("*\t");
+                        printf("%c ", (j == x[i]) ? 'Q' : 'X');
                     }
                     printf("\n");
                 }
