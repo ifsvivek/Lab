@@ -1,1 +1,0 @@
-.\multiplication.o: multiplication.asm

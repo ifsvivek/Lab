@@ -1,3 +1,0 @@
-Dependencies for Project 'Progrma11', Target 'Target 1': (DO NOT MODIFY !)
-F (.\Progrma11.asm)(0x667E5C3D)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\progrma11.lst --xref -o .\progrma11.o --depend .\progrma11.d)
-F (.\fib.asm)(0x667E6357)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\fib.lst --xref -o .\fib.o --depend .\fib.d)

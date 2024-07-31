@@ -1,1 +1,0 @@
-.\assecending.o: assecending.ASM

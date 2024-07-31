@@ -1,2 +1,0 @@
-Dependencies for Project 'overflow', Target 'Target 1': (DO NOT MODIFY !)
-F (.\overflow.asm)(0x6690C50C)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\overflow.lst --xref -o .\overflow.o --depend .\overflow.d)

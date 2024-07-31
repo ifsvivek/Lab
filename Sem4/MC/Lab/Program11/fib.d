@@ -1,1 +1,0 @@
-.\fib.o: fib.asm
