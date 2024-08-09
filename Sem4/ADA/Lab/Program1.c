@@ -1,4 +1,4 @@
-#include<stdio.h>   
+#include<stdio.h>
 
 void kruskal(int cost[][10], int n) {
     int par[n], a, b, u, v, i, j, min, mincost = 0, ec = 0;
