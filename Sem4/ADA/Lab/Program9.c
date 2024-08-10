@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<stdlib.h>
 
 int count = 0;
 
@@ -22,10 +21,9 @@ void SelectionSort(int arr[], int n) {
 }
 
 void main() {
-    int* A, n, i;
+    int A[1000], n, i;
     printf("Enter the value of N: ");
     scanf("%d", &n);
-    A = (int*)malloc(n * sizeof(int));
     for (i = 0;i < n;i++)
         A[i] = rand() % 1001;
     SelectionSort(A, n);
@@ -33,6 +31,4 @@ void main() {
     for (i = 0;i < n;i++)
         printf("%d ", A[i]);
     printf("\nBasic Operation Count= %d\n", count);
-    free(A);
-
 }
