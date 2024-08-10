@@ -30,10 +30,7 @@ void main() {
     int n, m;
     printf("Enter the no. of objects: ");
     scanf("%d", &n);
-    float* p, * w;
-
-    p = (float*)malloc(n * sizeof(float));
-    w = (float*)malloc(n * sizeof(float));
+    float p[n], w[n];
 
     printf("Enter the capacity: ");
     scanf("%d", &m);

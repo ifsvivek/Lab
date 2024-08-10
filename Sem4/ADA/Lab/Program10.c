@@ -37,11 +37,10 @@ void quicksort(int a[], int l, int r) {
     }
 }
 
-int main() {
-    int* a, n, i;
+void main() {
+    int a[1000], n, i;
     printf("Enter the value of N: ");
     scanf("%d", &n);
-    a = (int*)malloc(n * sizeof(int));
     for (i = 0;i < n;i++)
         a[i] = rand() % 9999;
     quicksort(a, 0, n - 1);
@@ -49,5 +48,5 @@ int main() {
     for (i = 0; i < n; i++)
         printf("%d\n", a[i]);
     printf("\nBasic Operation Count=%d", count);
-    free(a);
+
 }

@@ -14,7 +14,7 @@ void warshall(int r[][10], int n) {
     }
 }
 
-int main() {
+void main() {
     int n, r[10][10];
     printf("Enter the number of vertices: ");
     scanf("%d", &n);

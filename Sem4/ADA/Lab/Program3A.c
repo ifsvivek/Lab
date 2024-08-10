@@ -18,7 +18,7 @@ void floyds(int d[][10], int n) {
     }
 }
 
-int main() {
+void main() {
     int n, d[10][10];
     printf("Enter the number of vertices: ");
     scanf("%d", &n);

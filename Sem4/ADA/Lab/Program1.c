@@ -31,7 +31,7 @@ void kruskal(int cost[][10], int n) {
     printf("Minimum cost = %d\n", mincost);
 }
 
-int main() {
+void main() {
     int n, cost[10][10], i, j;
     printf("Enter the number of vertices: ");
     scanf("%d", &n);
@@ -42,5 +42,5 @@ int main() {
             scanf("%d", &cost[i][j]);
 
     kruskal(cost, n);
-    return 0;
+
 }

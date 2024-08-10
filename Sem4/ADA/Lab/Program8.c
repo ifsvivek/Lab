@@ -19,7 +19,7 @@ void findSubsetsWithSum(int currentSum, int currentIndex, int remainingSum) {
     }
 }
 
-int main() {
+void main() {
     int sum = 0;
     printf("Enter the number of elements: ");
     scanf("%d", &n);
@@ -37,5 +37,4 @@ int main() {
     findSubsetsWithSum(0, 1, sum);
     if (count == 0)
         printf("No solution exists\n");
-    return 0;
 }
