@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 void prims(int n, int s, int cost[][10]) {
-    int i, j, a, b, min, total_cost = 0, edge_count = 0;
+    int i, j, a=-1, b=-1, min, total_cost = 0, edge_count = 0;
     int tree_vertex[10] = { 0 };
     tree_vertex[s] = 1;
 
