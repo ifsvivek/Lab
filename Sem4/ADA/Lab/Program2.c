@@ -18,10 +18,12 @@ void prims(int n, int s, int cost[][10]) {
                 }
             }
         }
-        printf("Edge from vertices %d to %d in %d\n", a, b, min);
-        tree_vertex[b] = 1;
-        total_cost += min;
-        edge_count++;
+        if (a != -1 && b != -1) {
+            printf("Edge from vertices %d to %d with cost %d\n", a, b, min);
+            tree_vertex[b] = 1;
+            total_cost += min;
+            edge_count++;
+        }
     }
     printf("Min cost= %d\n", total_cost);
 }
