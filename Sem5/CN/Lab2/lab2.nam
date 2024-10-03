@@ -1,0 +1,6 @@
+n -t 0 -s 0 -S DLABEL -l "Ping0" -L ""
+n -t 0 -s 1 -S DLABEL -l "Ping1" -L ""
+n -t 0 -s 2 -S DLABEL -l "R1" -L ""
+n -t 0 -s 3 -S DLABEL -l "R2" -L ""
+n -t 0 -s 4 -S DLABEL -l "Ping4" -L ""
+n -t 0 -s 5 -S DLABEL -l "Ping5" -L ""
