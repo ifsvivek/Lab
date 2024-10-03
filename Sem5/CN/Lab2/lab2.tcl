@@ -1,103 +1,63 @@
-# Initialize the simulator
 set ns [new Simulator]
-
-# Open the trace and nam files
-set nf [open lab2.nam w]
-set f [open lab2.tr w]
-
-# Set up tracing
-$ns namtrace-all $nf
+set f [open out.tr w]
+set nf [open out.nam w]
 $ns trace-all $f
-
-# Procedure to end the simulation
+$ns namtrace-all $nf
 proc finish {} {
-    global ns nf f
+    global ns f nf
     $ns flush-trace
-    close $nf
     close $f
-    exec nam lab2.nam &
+    close $nf
+    exec nam out.nam &
     exit 0
 }
-
-# Define the nodes
 set n0 [$ns node]
 set n1 [$ns node]
 set n2 [$ns node]
 set n3 [$ns node]
 set n4 [$ns node]
 set n5 [$ns node]
-
-# Label nodes for easier identification in NAM
-$n0 label "Ping0"
-$n1 label "Ping1"
+$n0 label "ping0"
+$n1 label "ping1"
 $n2 label "R1"
 $n3 label "R2"
-$n4 label "Ping4"
-$n5 label "Ping5"
-
-# Set link colors
-$ns color 1 Red
-$ns color 2 Blue
-$ns color 3 Green
-$ns color 4 Orange
-
-# Define duplex links between the nodes
+$n4 label "ping4"
+$n5 label "ping5"
+$ns color 1 red
+$ns color 2 blue
+$ns color 3 green
+$ns color 4 orange
 $ns duplex-link $n0 $n2 1Mb 10ms DropTail
 $ns duplex-link $n1 $n2 1Mb 10ms DropTail
 $ns duplex-link $n2 $n3 0.4Mb 30ms DropTail
 $ns duplex-link $n3 $n4 1Mb 10ms DropTail
 $ns duplex-link $n3 $n5 1Mb 10ms DropTail
-
-# Set up ping agents
 set ping0 [new Agent/Ping]
 $ns attach-agent $n0 $ping0
-
 set ping1 [new Agent/Ping]
 $ns attach-agent $n1 $ping1
-
 set ping4 [new Agent/Ping]
 $ns attach-agent $n4 $ping4
-
 set ping5 [new Agent/Ping]
 $ns attach-agent $n5 $ping5
-
-# Create Null agents to receive packets
-set null4 [new Agent/Null]
-$ns attach-agent $n4 $null4
-
-set null5 [new Agent/Null]
-$ns attach-agent $n5 $null5
-
-# Connect the ping agents to the Null agents
-$ns connect $ping0 $null4
-$ns connect $ping1 $null5
-
-# Procedure to send ping packets periodically
-proc SendPingPacket {} {
+$ns connect $ping0 $ping4
+$ns connect $ping1 $ping5
+proc sendPingPacket {} {
     global ns ping0 ping1
     set intervalTime 0.001
     set now [$ns now]
     $ns at [expr $now + $intervalTime] "$ping0 send"
     $ns at [expr $now + $intervalTime] "$ping1 send"
-    $ns at [expr $now + $intervalTime] "SendPingPacket"
+    $ns at [expr $now + $intervalTime] "sendPingPacket"
 }
-
-# Define the behavior when an agent receives a packet
 Agent/Ping instproc recv {from rtt} {
     global seq
     $self instvar node_
-    puts "The node [$node_ id] received an ACK from $from with RTT $rtt ms"
-}
-
-# Set classes for ping agents
-$ping0 set Class_ 1
-$ping1 set Class_ 2
-$ping4 set Class_ 4
-$ping5 set Class_ 5
-
-# Schedule events
-$ns at 0.01 "SendPingPacket"
-$ns at 10.0 "finish"
-
-# Run the simulation
-$ns run
+    puts "The node [$node_ id] received and ACK from the node $from with RTT $rtt ms" }
+    $ping0 set class_ 1
+    $ping1 set class_ 2
+    $ping4 set class_ 4
+    $ping5 set class_ 5
+    $ns at 0.01 "sendPingPacket"
+    $ns at 10.0 "finish"
+    $ns run
