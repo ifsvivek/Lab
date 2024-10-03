@@ -7,5 +7,5 @@ Begin{
     }
 }
 END{
-    print "Total number of %s packets dropped: %d", $5, drop;
+    printf("Total number of %s packets dropped: %d\n", $5, drop);
 }
