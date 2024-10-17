@@ -11,19 +11,19 @@ class CRC {
         int[] trans_message;
         int message_bits, gen_bits, total_bits;
 
-        System.out.println("\n Enter number of bits in message : ");
+        System.out.println("\nEnter number of bits in message : ");
         message_bits = Integer.parseInt(br.readLine());
         message = new int[message_bits];
 
-        System.out.println("\n Enter message bits : ");
+        System.out.println("\nEnter message bits : ");
         for (int i = 0; i < message_bits; i++)
             message[i] = Integer.parseInt(br.readLine());
 
-        System.out.println("\n Enter number of bits in gen : ");
+        System.out.println("\nEnter number of bits in gen : ");
         gen_bits = Integer.parseInt(br.readLine());
         gen = new int[gen_bits];
 
-        System.out.println("\n Enter gen bits : ");
+        System.out.println("\nEnter gen bits : ");
         for (int i = 0; i < gen_bits; i++)
             gen[i] = Integer.parseInt(br.readLine());
 
@@ -35,15 +35,15 @@ class CRC {
         for (int i = 0; i < message.length; i++)
             app_message[i] = message[i];
 
-        System.out.print("\n Message bits are : ");
+        System.out.print("\nMessage bits are : ");
         for (int i = 0; i < message_bits; i++)
             System.out.print(message[i]);
 
-        System.out.print("\n Generators bits are : ");
+        System.out.print("\nGenerators bits are : ");
         for (int i = 0; i < gen_bits; i++)
             System.out.print(gen[i]);
 
-        System.out.print("\n Appended message is : ");
+        System.out.print("\nAppended message is : ");
         for (int i = 0; i < app_message.length; i++)
             System.out.print(app_message[i]);
 
@@ -55,15 +55,15 @@ class CRC {
         for (int i = 0; i < app_message.length; i++)
             trans_message[i] = (app_message[i] ^ rem[i]);
 
-        System.out.println("\n Transmitted message from the transmitter is : ");
+        System.out.println("\nTransmitted message from the transmitter is : ");
         for (int i = 0; i < trans_message.length; i++)
             System.out.print(trans_message[i]);
 
-        System.out.println("\n Enter received message of " + total_bits + " bits at receiver end: ");
+        System.out.println("\nEnter received message of " + total_bits + " bits at receiver end: ");
         for (int i = 0; i < trans_message.length; i++)
             trans_message[i] = Integer.parseInt(br.readLine());
 
-        System.out.println("\n Received message is :");
+        System.out.println("\nReceived message is :");
         for (int i = 0; i < trans_message.length; i++)
             System.out.print(trans_message[i]);
 
@@ -74,11 +74,11 @@ class CRC {
 
         for (int i = 0; i < rem.length; i++) {
             if (rem[i] != 0) {
-                System.out.println("\n There is Error in the received message!!!");
+                System.out.println("\nThere is Error in the received message!!!");
                 break;
             }
             if (i == rem.length - 1)
-                System.out.println("\n There is No Error in the received message!!!");
+                System.out.println("\nThere is No Error in the received message!!!");
         }
     }
 
