@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
     <style>
-        /* Style the form's background and overall layout */
         body {
             background-color: #f0f8ff;
             font-family: Arial, sans-serif;
@@ -16,7 +16,6 @@
             margin: 0;
         }
 
-        /* Style the table used for layout */
         table {
             background-color: #ffffff;
             border-collapse: collapse;
@@ -24,25 +23,23 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Table cells padding and border */
         td {
             padding: 10px;
         }
 
-        /* Style input elements */
         input[type="text"],
         input[type="email"],
         input[type="password"],
         select {
-            width: 100%;
+            width: 90%;
             padding: 8px;
             font-size: 1rem;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
 
-        /* Button styling */
-        input[type="submit"] {
+        input[type="submit"],
+        input[type="reset"] {
             background-color: #4CAF50;
             color: white;
             padding: 10px 20px;
@@ -50,14 +47,14 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            margin: 5px;
         }
 
-        /* Button hover effect */
-        input[type="submit"]:hover {
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
             background-color: #45a049;
         }
 
-        /* Labels and text styling */
         label {
             color: #333;
             font-size: 1rem;
@@ -70,9 +67,9 @@
         }
     </style>
 </head>
+
 <body>
 
-    <!-- Registration form with a table for layout -->
     <form action="#" method="POST">
         <h2>Registration Form</h2>
         <table>
@@ -113,10 +110,12 @@
             <tr>
                 <td colspan="2" style="text-align: center;">
                     <input type="submit" value="Register">
+                    <input type="reset" value="Reset">
                 </td>
             </tr>
         </table>
     </form>
 
 </body>
+
 </html>
