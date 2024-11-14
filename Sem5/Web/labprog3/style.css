@@ -1,0 +1,46 @@
+h2 {
+    text-decoration: underline;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+h3 {
+    text-decoration:overline;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+hr {
+    border: 3px solid rgb(91, 83, 83);
+    margin: 20px 0;
+}
+
+p {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    letter-spacing: 2px;
+    margin: 10px 0;
+}
+div {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 2px solid #ddd;
+    box-shadow: 2px 2px 10px black;
+}
+
+span {
+    text-decoration: line-through;
+    font-weight: bold;
+}
+
+time {
+    font-style: italic;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+a {
+    color: blue;
+    text-decoration: none;
+}
