@@ -4,12 +4,7 @@ import java.math.BigInteger;
 import java.util.Random;
 
 public class Encrypt {
-    private BigInteger p;
-    private BigInteger q;
-    private BigInteger N;
-    private BigInteger phi;
-    private BigInteger e;
-    private BigInteger d;
+    private BigInteger p, q, N, phi, e, d;
     private int bitlength = 1024;
     private Random r;
 
