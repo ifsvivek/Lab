@@ -5,10 +5,10 @@ public class leaky {
         Scanner my = new Scanner(System.in);
         int no_groups, bucket_size;
 
-        System.out.print("\n Enter the bucket size : \t");
+        System.out.print("Enter the bucket size : \t");
         bucket_size = my.nextInt();
 
-        System.out.print("\n Enter the no of groups : \t");
+        System.out.print("Enter the no of groups : \t");
         no_groups = my.nextInt();
 
         int no_packets[] = new int[no_groups];
@@ -16,10 +16,10 @@ public class leaky {
         int out_bw, reqd_bw = 0, tot_packets = 0;
 
         for (int i = 0; i < no_groups; i++) {
-            System.out.print("\n Enter the no of packets for group " + (i + 1) + "\t");
+            System.out.print("Enter the no of packets for group " + (i + 1) + "\t");
             no_packets[i] = my.nextInt();
 
-            System.out.print("\n Enter the input bandwidth for the group " + (i + 1) + "\t");
+            System.out.print("Enter the input bandwidth for the group " + (i + 1) + "\t");
             in_bw[i] = my.nextInt();
 
             if ((tot_packets + no_packets[i]) <= bucket_size) {
