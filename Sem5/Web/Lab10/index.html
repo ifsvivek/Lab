@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AJAX Demonstration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h3 {
+            color: navy;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px 0;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        div {
+            margin-top: 10px;
+        }
+    </style>
+    <!-- Load jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <h1>AJAX Demonstration</h1>
+
+    <!-- a. AJAX without jQuery -->
+    <h3>a. AJAX without jQuery</h3>
+    <button onclick="loadTextFile()">Load Text (Without jQuery)</button>
+    <div id="output1">
+        <pre>Text content will appear here...</pre>
+    </div>
+
+    <!-- b. AJAX with jQuery -->
+    <h3>b. AJAX with jQuery</h3>
+    <button id="loadText">Load Text (With jQuery)</button>
+    <div id="output2">
+        <pre>Text content will appear here...</pre>
+    </div>
+
+    <!-- c. jQuery getJSON -->
+    <h3>c. Using getJSON() Method</h3>
+    <button id="loadJson">Load JSON (getJSON)</button>
+    <div id="output3">
+        <pre>JSON content will appear here...</pre>
+    </div>
+
+    <!-- d. JSON.parse() -->
+    <h3>d. Using JSON.parse() Method</h3>
+    <button id="parseJson">Parse JSON</button>
+    <div id="output4">
+        <pre>Parsed JSON values will appear here...</pre>
+    </div>
+
+    <script>
+        // a. AJAX without jQuery
+        function loadTextFile() {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "sample.txt", true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    document.getElementById('output1').innerText = xhr.responseText;
+                } else {
+                    document.getElementById('output1').innerText = "Error loading file.";
+                }
+            };
+            xhr.send();
+        }
+
+        // b. AJAX with jQuery
+        $("#loadText").click(function () {
+            $.ajax({
+                url: "sample.txt",
+                method: "GET",
+                success: function (data) {
+                    $("#output2").text(data);
+                },
+                error: function () {
+                    $("#output2").text("Error loading file.");
+                }
+            });
+        });
+
+        // c. jQuery getJSON method
+        $("#loadJson").click(function () {
+            $.getJSON("data.json", function (data) {
+                $("#output3").html(JSON.stringify(data, null, 2));
+            }).fail(function () {
+                $("#output3").text("Error loading JSON data.");
+            });
+        });
+
+        // d. Using JSON.parse() method
+        $("#parseJson").click(function () {
+            const jsonString = '{"name": "John Doe", "age": 30, "city": "New York"}';
+            const jsonObject = JSON.parse(jsonString);
+            $("#output4").html(
+                `Name: ${jsonObject.name} <br> Age: ${jsonObject.age} <br> City: ${jsonObject.city}`
+            );
+        });
+    </script>
+</body>
+
+</html>

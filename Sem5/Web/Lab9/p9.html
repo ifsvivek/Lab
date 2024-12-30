@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Script Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            margin-bottom: 20px;
+        }
+
+        .animate-box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin-top: 20px;
+        }
+
+        .highlight {
+            background-color: pink !important;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <p id="paragraph">This is a paragraph.</p>
+        <button id="append-to-paragraph">Append to Paragraph</button>
+    </div>
+
+    <div class="container">
+        <ul id="list">
+            <li>Item 1</li>
+            <li>Item 2</li>
+        </ul>
+        <button id="append-to-list">Append to List</button>
+    </div>
+
+    <div class="container">
+        <button id="animate-box">Animate Box</button>
+        <div class="animate-box"></div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // a. Append content at the end of existing paragraph and list
+            $('#append-to-paragraph').click(function () {
+                $('#paragraph').append(' Appended content!');
+            });
+
+            $('#append-to-list').click(function () {
+                $('#list').append('<li>Appended item</li>');
+            });
+
+            // b. Change the state of the element with CSS style using animate()
+            $('#animate-box').click(function () {
+                $('.animate-box').animate({
+                    width: '200px',
+                    height: '200px',
+                    marginLeft: '50px'
+                }, 1000, function () {
+                    // c. Change the color of the div when the animation is complete
+                    $(this).addClass('highlight');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        /* General styles for the form */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 50%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        td {
+            padding: 10px;
+            vertical-align: top;
+        }
+
+        td.label {
+            text-align: right;
+            font-size: 14px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        td.input {
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        /* Button styles */
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45A049;
+        }
+
+        /* Background colors for different input types */
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        select,
+        textarea {
+            background-color: #f9f9f9;
+        }
+
+        /* Font color and size for input labels */
+        td.label {
+            font-size: 15px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Registration Form</h1>
+
+    <form action="#" method="post">
+        <table>
+            <!-- Name -->
+            <tr>
+                <td class="label"><label for="name">Full Name:</label></td>
+                <td class="input"><input type="text" id="name" name="name" placeholder="Enter your full name"></td>
+            </tr>
+            <!-- Email -->
+            <tr>
+                <td class="label"><label for="email">Email:</label></td>
+                <td class="input"><input type="email" id="email" name="email" placeholder="Enter your email"></td>
+            </tr>
+            <!-- Password -->
+            <tr>
+                <td class="label"><label for="password">Password:</label></td>
+                <td class="input"><input type="password" id="password" name="password" placeholder="Enter your password"></td>
+            </tr>
+            <!-- Date of Birth -->
+            <tr>
+                <td class="label"><label for="dob">Date of Birth:</label></td>
+                <td class="input"><input type="date" id="dob" name="dob"></td>
+            </tr>
+            <!-- Gender -->
+            <tr>
+                <td class="label">Gender:</td>
+                <td class="input">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                </td>
+            </tr>
+            <!-- Hobbies -->
+            <tr>
+                <td class="label">Hobbies:</td>
+                <td class="input">
+                    <input type="checkbox" id="sports" name="hobbies" value="sports">
+                    <label for="sports">Sports</label>
+                    <input type="checkbox" id="reading" name="hobbies" value="reading">
+                    <label for="reading">Reading</label>
+                    <input type="checkbox" id="traveling" name="hobbies" value="traveling">
+                    <label for="traveling">Traveling</label>
+                </td>
+            </tr>
+            <!-- Country -->
+            <tr>
+                <td class="label"><label for="country">Country:</label></td>
+                <td class="input">
+                    <select id="country" name="country">
+                        <option value="india">India</option>
+                        <option value="usa">USA</option>
+                        <option value="canada">Canada</option>
+                        <option value="uk">UK</option>
+                    </select>
+                </td>
+            </tr>
+            <!-- Address -->
+            <tr>
+                <td class="label"><label for="address">Address:</label></td>
+                <td class="input"><textarea id="address" name="address" rows="4" placeholder="Enter your address"></textarea></td>
+            </tr>
+            <!-- Submit Button -->
+            <tr>
+                <td class="label"></td>
+                <td class="input"><input type="submit" value="Register"></td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>
