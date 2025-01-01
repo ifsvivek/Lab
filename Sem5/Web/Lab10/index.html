@@ -49,7 +49,7 @@
 
     <!-- a. AJAX without jQuery -->
     <h3>a. AJAX without jQuery</h3>
-    <button onclick="loadTextFile()">Load Text (Without jQuery)</button>
+    <button id="buttonn">Load Text (Without jQuery)</button>
     <div id="output1">
         <pre>Text content will appear here...</pre>
     </div>
@@ -76,10 +76,15 @@
     </div>
 
     <script>
+        // Get button element and add event listener
+        let button = document.getElementById('buttonn');
+        button.addEventListener('click', loadTextFile);
+
         // a. AJAX without jQuery
         function loadTextFile() {
             const xhr = new XMLHttpRequest();
             xhr.open("GET", "sample.txt", true);
+
             xhr.onload = function () {
                 if (xhr.status === 200) {
                     document.getElementById('output1').innerText = xhr.responseText;
@@ -87,14 +92,15 @@
                     document.getElementById('output1').innerText = "Error loading file.";
                 }
             };
+
             xhr.send();
         }
 
         // b. AJAX with jQuery
         $("#loadText").click(function () {
             $.ajax({
-                url: "sample.txt",
                 method: "GET",
+                url: "sample.txt",
                 success: function (data) {
                     $("#output2").text(data);
                 },
@@ -107,7 +113,7 @@
         // c. jQuery getJSON method
         $("#loadJson").click(function () {
             $.getJSON("data.json", function (data) {
-                $("#output3").html(JSON.stringify(data, null, 2));
+                $("#output3").text(JSON.stringify(data));
             }).fail(function () {
                 $("#output3").text("Error loading JSON data.");
             });
@@ -118,10 +124,13 @@
             const jsonString = '{"name": "John Doe", "age": 30, "city": "New York"}';
             const jsonObject = JSON.parse(jsonString);
             $("#output4").html(
-                `Name: ${jsonObject.name} <br> Age: ${jsonObject.age} <br> City: ${jsonObject.city}`
+                `Name: ${jsonObject.name} <br> 
+                 Age: ${jsonObject.age} <br> 
+                 City: ${jsonObject.city}`
             );
         });
     </script>
+
 </body>
 
 </html>

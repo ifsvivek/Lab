@@ -1,0 +1,27 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "John Smith",
+            "email": "john@example.com",
+            "active": true,
+            "hobbies": ["reading", "hiking", "photography"]
+        },
+        {
+            "id": 2,
+            "name": "Alice Brown",
+            "email": "alice@example.com",
+            "active": false,
+            "hobbies": ["gaming", "cooking"]
+        }
+    ],
+    "settings": {
+        "theme": "dark",
+        "notifications": true,
+        "language": "en"
+    },
+    "metadata": {
+        "version": "1.0.0",
+        "lastUpdated": "2023-11-15"
+    }
+}
