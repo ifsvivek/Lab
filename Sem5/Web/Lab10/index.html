@@ -76,11 +76,10 @@
     </div>
 
     <script>
-        // Get button element and add event listener
+        
+        // a. AJAX without jQuery
         let button = document.getElementById('buttonn');
         button.addEventListener('click', loadTextFile);
-
-        // a. AJAX without jQuery
         function loadTextFile() {
             const xhr = new XMLHttpRequest();
             xhr.open("GET", "sample.txt", true);
