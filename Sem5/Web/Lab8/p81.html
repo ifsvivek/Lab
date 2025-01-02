@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Visitor Counter</title>
     <style>
@@ -33,6 +34,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Welcome <br>to<br> Cambridge Institute of Technology!</h1>
@@ -47,7 +49,10 @@
         $visitorCount++;
         file_put_contents($count, $visitorCount);
         ?>
-        <p>You are visitor number: <strong><?php echo $visitorCount; ?></strong></p>
+        <p>You are visitor number: <strong>
+                <?php echo $visitorCount; ?>
+            </strong></p>
     </div>
 </body>
+
 </html>

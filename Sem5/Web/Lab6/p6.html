@@ -1,9 +1,8 @@
 <!DOCTYPE html>
+
 <head>
     <title>Simple Calculator</title>
     <style>
-
-       
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f0f4f8;
@@ -15,7 +14,7 @@
             height: 100vh;
         }
 
-       
+
         .calculator {
             background-color: #ffe;
             padding: 20px;
@@ -25,7 +24,7 @@
 
         }
 
-        
+
         .calculator input[type="number"] {
             width: calc(100% - 20px);
             padding: 10px;
@@ -35,7 +34,7 @@
             border-radius: 4px;
         }
 
-        
+
         #result {
             font-size: 20px;
             color: #333;
@@ -46,7 +45,7 @@
             border-radius: 4px;
         }
 
-     
+
         .calculator button {
             width: 100%;
             padding: 10px;
@@ -64,12 +63,13 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="calculator">
         <h2>Simple Calculator</h2>
 
-       
+
         <input type="number" id="num1" placeholder="Enter first number">
         <input type="number" id="num2" placeholder="Enter second number">
 
@@ -82,20 +82,20 @@
         <button onclick="calculate('square')">Square (1st number)</button>
         <button onclick="calculate('square-root')">Square Root (1st number)</button>
 
-       
+
         <div id="result">Result: </div>
     </div>
 
-   
+
     <script>
         function calculate(operation) {
-           
+
             const num1 = parseFloat(document.getElementById('num1').value);
             const num2 = parseFloat(document.getElementById('num2').value);
 
             var result;
 
-         
+
             switch (operation) {
                 case 'sum':
                     result = num1 + num2;
@@ -131,4 +131,5 @@
     </script>
 
 </body>
+
 </html>

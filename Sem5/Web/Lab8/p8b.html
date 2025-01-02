@@ -44,6 +44,7 @@ $conn->close();
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Sorted Student Records</title>
     <style>
@@ -52,7 +53,8 @@ $conn->close();
             width: 100%;
         }
 
-        th, td {
+        th,
+        td {
             text-align: left;
             padding: 8px;
             border: 1px solid #ddd;
@@ -68,6 +70,7 @@ $conn->close();
         }
     </style>
 </head>
+
 <body>
     <h2>Sorted Student Records</h2>
     <table>
@@ -77,12 +80,19 @@ $conn->close();
             <th>Roll No.</th>
         </tr>
         <?php foreach ($students as $student): ?>
-            <tr>
-                <td><?php echo $student['id']; ?></td>
-                <td><?php echo $student['name']; ?></td>
-                <td><?php echo $student['roll_no']; ?></td>
-            </tr>
+        <tr>
+            <td>
+                <?php echo $student['id']; ?>
+            </td>
+            <td>
+                <?php echo $student['name']; ?>
+            </td>
+            <td>
+                <?php echo $student['roll_no']; ?>
+            </td>
+        </tr>
         <?php endforeach; ?>
     </table>
 </body>
+
 </html>
