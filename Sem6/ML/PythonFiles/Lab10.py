@@ -1,0 +1,39 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+import warnings
+
+warnings.filterwarnings("ignore")
+
+# Read and prepare data
+data = pd.read_csv("breast_cancer.csv")
+df = data.drop(["id"], axis=1)  # Only drop 'id' column
+
+# Select features for clustering
+X = df.iloc[:, 1:]  # except first column
+
+# Apply K-means clustering
+kmeans = KMeans(n_clusters=2, random_state=42)
+kmeans.fit(X)
+
+# Get predictions
+pred = kmeans.predict(X)
+
+# Visualize results
+plt.figure(figsize=(10, 6))
+plt.scatter(X.iloc[:, 0], X.iloc[:, 1], c=pred, cmap="viridis", marker="o")
+plt.scatter(
+    kmeans.cluster_centers_[:, 0],
+    kmeans.cluster_centers_[:, 1],
+    s=100,
+    c="red",
+    marker="^",
+    label="Centroids",
+)
+
+plt.xlabel("radius_mean")
+plt.ylabel("texture_mean")
+plt.title("K-means Clustering Results")
+plt.legend()
+plt.show()
