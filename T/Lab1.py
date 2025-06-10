@@ -1,23 +1,13 @@
-"""
-Lab1: Data Exploration and Visualization
-Housing Dataset Analysis
-"""
-
 import pandas as pd
 import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Load the dataset
 df = pd.read_csv("housing.csv")
 
-
-# Select numerical features
 numerical_features = df.select_dtypes(include=[np.number]).columns
 print(numerical_features)
 
-
-# Outlier detection using IQR method
 for feature in numerical_features:
     q1 = np.percentile(df[feature].dropna(), 25)
     q3 = np.percentile(df[feature].dropna(), 75)
@@ -32,10 +22,9 @@ for feature in numerical_features:
     print(f"Outliers for {feature}:")
     print(f"Number of outliers: {len(outliers)}")
 
-# Combined histogram plots in subplots
 plt.figure(figsize=(20, 15))
 num_features = len(numerical_features)
-rows = (num_features + 2) // 3  # Calculate number of rows needed (3 plots per row)
+rows = (num_features + 2) // 3
 
 for i, feature in enumerate(numerical_features):
     plt.subplot(rows, 3, i + 1)
@@ -47,10 +36,9 @@ for i, feature in enumerate(numerical_features):
 plt.tight_layout()
 plt.show()
 
-# Combined boxplot plots in subplots
 plt.figure(figsize=(20, 15))
 num_features = len(numerical_features)
-rows = (num_features + 2) // 3  # Calculate number of rows needed (3 plots per row)
+rows = (num_features + 2) // 3
 
 for i, feature in enumerate(numerical_features):
     plt.subplot(rows, 3, i + 1)
