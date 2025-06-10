@@ -4,41 +4,30 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.pipeline import make_pipeline
-from sklearn.metrics import mean_squared_error
 
-# Load data
-df = pd.read_csv('housing.csv')
-X = df[['MedInc']]
-y = df['target']
+# Load data from CSV
+data = pd.read_csv("housing.csv")
+X, y = data[["MedInc"]], data["target"]
 
 # Split data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-# Linear regression
-linear_reg = LinearRegression()
-linear_reg.fit(X_train, y_train)
-y_pred_linear = linear_reg.predict(X_test)
+# Train models
+linear_pred = LinearRegression().fit(X_train, y_train).predict(X_test)
+poly_pred = make_pipeline(PolynomialFeatures(3), LinearRegression()).fit(X_train, y_train).predict(X_test)
 
-# Polynomial regression
-poly_reg = make_pipeline(PolynomialFeatures(2), LinearRegression())
-poly_reg.fit(X_train, y_train)
-y_pred_poly = poly_reg.predict(X_test)
+# Visualize results
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
 
-# Results
-print(f"Linear MSE: {mean_squared_error(y_test, y_pred_linear):.3f}")
-print(f"Polynomial MSE: {mean_squared_error(y_test, y_pred_poly):.3f}")
+ax1.scatter(X_test, y_test, color='blue', label='Actual', alpha=0.6)
+ax1.plot(X_test, linear_pred, color='red', label='Predicted')
+ax1.set_title('Linear Regression')
+ax1.legend()
 
-# Visualize
-plt.figure(figsize=(10, 5))
+ax2.scatter(X_test, y_test, color='blue', label='Actual', alpha=0.6)
+ax2.scatter(X_test, poly_pred, color='red', label='Predicted', alpha=0.6)
+ax2.set_title('Polynomial Regression')
+ax2.legend()
 
-plt.subplot(1, 2, 1)
-plt.scatter(X_test, y_test, alpha=0.5)
-plt.scatter(X_test, y_pred_linear, alpha=0.5)
-plt.title('Linear Regression')
-
-plt.subplot(1, 2, 2)
-plt.scatter(X_test, y_test, alpha=0.5)
-plt.scatter(X_test, y_pred_poly, alpha=0.5)
-plt.title('Polynomial Regression')
-
+plt.tight_layout()
 plt.show()

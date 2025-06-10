@@ -21,6 +21,6 @@ def find_s(df, target_col):
     return hypothesis
 
 # Run algorithm
-result = find_s(df, 'EnjoySport')
-print(f"Most specific hypothesis: {result}")
-print(f"Attributes: {df.columns.tolist()[:-1]}")
+hypothesis = find_s(df, "Job offer")
+print(hypothesis)
+
