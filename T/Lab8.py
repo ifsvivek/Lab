@@ -21,7 +21,7 @@ print(f"Predicted class for sample: {prediction_class}")
 
 plt.figure(figsize=(12, 8))
 tree.plot_tree(
-    clf, filled=True, feature_names=X.columns, class_names=sorted(y.unique())
+    clf, filled=True, feature_names=X.columns.tolist(), class_names=sorted(y.unique())
 )
 plt.title("Decision Tree - Breast Cancer Dataset")
 plt.show()
