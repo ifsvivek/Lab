@@ -28,7 +28,7 @@ rows = (num_features + 2) // 3
 
 for i, feature in enumerate(numerical_features):
     plt.subplot(rows, 3, i + 1)
-    sns.histplot(df[feature], bins=30, kde=True)
+    sns.histplot(df[[feature]], bins=30, kde=True)
     plt.title(f"Histogram of {feature}")
     plt.xlabel(feature)
     plt.ylabel("Frequency")
