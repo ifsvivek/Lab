@@ -7,9 +7,8 @@ data = pd.read_csv("breast_cancer.csv")
 df = data.copy()
 x = df.iloc[:, 0:-1]
 
-kmeans = KMeans(n_clusters=2, random_state=42)
+kmeans = KMeans(n_clusters=2, random_state=42).fit(x)
 
-kmeans.fit(x)
 pred = kmeans.predict(x)
 
 print(x.iloc[:, 0])
