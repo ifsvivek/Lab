@@ -22,29 +22,13 @@ for feature in numerical_features:
     print(f"Outliers for {feature}:")
     print(f"Number of outliers: {len(outliers)}")
 
-plt.figure(figsize=(20, 15))
-num_features = len(numerical_features)
-rows = (num_features + 2) // 3
 
-for i, feature in enumerate(numerical_features):
-    plt.subplot(rows, 3, i + 1)
+for feature in numerical_features:
     sns.histplot(df[[feature]], bins=30, kde=True)
-    plt.title(f"Histogram of {feature}")
-    plt.xlabel(feature)
-    plt.ylabel("Frequency")
+    plt.tight_layout()
+    plt.show()
 
-plt.tight_layout()
-plt.show()
-
-plt.figure(figsize=(20, 15))
-num_features = len(numerical_features)
-rows = (num_features + 2) // 3
-
-for i, feature in enumerate(numerical_features):
-    plt.subplot(rows, 3, i + 1)
+for feature in numerical_features:
     sns.boxplot(x=df[feature])
-    plt.title(f"Boxplot of {feature}")
-    plt.xlabel(feature)
-
-plt.tight_layout()
-plt.show()
+    plt.tight_layout()
+    plt.show()
