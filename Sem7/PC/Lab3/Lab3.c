@@ -16,18 +16,10 @@ int fib_recursive_omp(int n) {
 }
 
 int main(){
-    int n = 41;
-    int result;
+    int n = 40;
     double start_time, end_time;
     start_time = omp_get_wtime();
-    
-    #pragma omp parallel
-    {
-        #pragma omp single
-        result = fib_recursive_omp(n);
-    }
-    
-    printf("Fibonacci of %d is %d\n", n, result);
+    printf("Fibonacci of %d is %d\n", n, fib_recursive_omp(n));
     end_time = omp_get_wtime();
     printf("Time taken: %f seconds\n", end_time - start_time);
     return 0;
