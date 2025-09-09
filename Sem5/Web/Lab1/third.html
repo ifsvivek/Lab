@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        header,
+        footer {
+            background: #4a90e2;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            margin: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        section,
+        article {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #4a90e2;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 10px;
+        }
+
+        ul,
+        ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        form {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background: #007BB8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to My First Webpage</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello, World! 👋 I'm <strong>Vivek Sharma</strong>, a Computer Science student at Cambridge Institute of Technology in Bengaluru, India. I have a passion for learning
+            and sharing my knowledge with others. I’m experienced in various programming languages and technologies, and I'm currently diving into React, Svelte, and Tailwind CSS.
+        </p>
+
+        <h3>🚀 About Me</h3>
+        <p>I’m a tech enthusiast who loves exploring new technologies and applying my knowledge to real-world scenarios. I believe in the transformative power of programming to
+            improve lives globally.</p>
+
+        <h3>🛠 Skills</h3>
+        <p><strong>Languages:</strong> C, C++, Python, Java, HTML, JSON, Markdown, CSS, JavaScript, TypeScript, SQL</p>
+        <p><strong>Frameworks/Libraries:</strong> React, Svelte, Tailwind CSS</p>
+        <p><strong>Tools:</strong> Vite, ESLint, Prettier, Vercel, Firebase, MongoDB</p>
+
+        <h3>🎯 I’m Currently Focusing On...</h3>
+        <ul>
+            <li>React</li>
+            <li>Svelte</li>
+            <li>Tailwind CSS</li>
+        </ul>
+
+        <h3>💼 Projects</h3>
+        <ul>
+            <li><strong>Lab:</strong> Code from my college lab assignments.</li>
+            <li><strong>code:</strong> Competitive programming journey code.</li>
+            <li><strong><a href="https://ifsvivek.github.io" target="_blank">ifsvivek.github.io:</a></strong> My personal website for projects, blog posts, and musings.</li>
+            <li><strong>discordpfp:</strong> Repo for adding custom profile pictures in Discord.</li>
+            <li><strong>discord:</strong> Plugin repository for Vendetta mod.</li>
+            <li><strong>LocalBot:</strong> An interactive Discord bot built with Python.</li>
+            <li><strong>VideoFetch:</strong> A plugin for Free Download Manager to download YouTube videos easily.</li>
+            <li><strong>Plot-Arduino-Data-in-Real-Time:</strong> Python code to read and plot data from an Arduino in real time.</li>
+            <li><strong>Notify:</strong> A web application built with SvelteKit, TailwindCSS, and PostgreSQL for managing notes.</li>
+        </ul>
+
+        <h3>📫 How to Reach Me</h3>
+        <p>Email: <a href="mailto:me@ifsvivek.tech">me@ifsvivek.tech</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/ifsvivek" target="_blank">Vivek Sharma</a></p>
+        <p>Twitter: <a href="https://twitter.com/ifsvivek" target="_blank">@ifsvivek</a></p>
+        <p>Instagram: <a href="https://instagram.com/ifsvivek" target="_blank">@ifsvivek</a></p>
+        <p>Website: <a href="https://gh.ifsvivek.tech" target="_blank">gh.ifsvivek.tech</a></p>
+
+        <h3>🐍 Snake</h3>
+        <img src="https://ifsvivek.github.io/snake/github-contribution-grid-snake-dark.svg" alt="GitHub Contribution Snake">
+    </section>
+
+    <article id="services">
+        <h2>My Services</h2>
+        <h3>Web Development</h3>
+        <p>I offer web development services including:</p>
+        <ul>
+            <li>Responsive websites</li>
+            <li>Custom web applications</li>
+            <li>E-commerce solutions</li>
+        </ul>
+        <h3>Design</h3>
+        <p>I also provide design services:</p>
+        <ol>
+            <li>Graphic design</li>
+            <li>User interface design</li>
+            <li>Branding</li>
+        </ol>
+    </article>
+
+    <article id="contact">
+        <h2>Contact Me</h2>
+        <p>If you have any questions, feel free to reach out!</p>
+        <form action="#" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+    </article>
+
+    <footer>
+        <p>&copy; 2024 Vivek Sharma. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

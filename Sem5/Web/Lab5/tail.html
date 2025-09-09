@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Newspaper</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 font-sans">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-center py-8 rounded-b-lg shadow-md">
+        <h1 class="text-4xl md:text-5xl font-bold">Welcome to my Newspaper</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto px-6 flex justify-center space-x-8">
+            <a href="#" class="text-lg hover:text-gray-400 transition duration-300">Home</a>
+            <a href="#" class="text-lg hover:text-gray-400 transition duration-300">About</a>
+            <a href="#" class="text-lg hover:text-gray-400 transition duration-300">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Section with Flexbox Layout -->
+    <section class="container mx-auto p-6 flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
+        <div class="flex-1 space-y-6">
+            <!-- Article 1 -->
+            <article class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                <div class="flex justify-between">
+                    <div class="flex-1">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Global Climate Change Reaches Tipping
+                            Point</h2>
+                        <p class="text-gray-600">Scientists have warned that the Earth's climate is nearing a critical
+                            threshold, which could lead to irreversible changes in weather patterns and ecosystem
+                            stability. Researchers are urging immediate action to reduce carbon emissions and increase
+                            investment in renewable energy sources.</p>
+                    </div>
+                    <img src="./cc.png" alt="Climate Change" class="w-32 h-32 object-cover rounded-lg">
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                <div class="flex justify-between">
+                    <div class="flex-1">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Tech Giants Face Scrutiny Over Data
+                            Privacy Practices</h2>
+                        <p class="text-gray-600">In a series of high-profile hearings, tech companies such as Facebook,
+                            Google, and Amazon have come under intense scrutiny for their data privacy practices.
+                            Lawmakers are demanding greater transparency and control over how personal data is
+                            collected, stored, and shared.</p>
+                    </div>
+                    <img src="./tp.png" alt="Tech Privacy" class="w-32 h-32 object-cover rounded-lg">
+                </div>
+            </article>
+        </div>
+
+        <!-- Sidebar Section on the Right -->
+        <aside class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Popular Articles</h3>
+            <ul class="space-y-4">
+                <li><a href="#" class="text-lg text-gray-800 hover:text-blue-500 transition duration-300">Climate Crisis
+                        and its Impact</a></li>
+                <li><a href="#" class="text-lg text-gray-800 hover:text-blue-500 transition duration-300">Tech Privacy
+                        Wars: What's Next?</a></li>
+                <li><a href="#" class="text-lg text-gray-800 hover:text-blue-500 transition duration-300">Global Economy
+                        in a Post-Pandemic World</a></li>
+            </ul>
+            <p class="text-gray-600 mt-4">Stay informed with the latest updates on global events, technology, and more!
+            </p>
+        </aside>
+    </section>
+
+    <!-- Table Showing Publishing Schedule -->
+    <div class="container mx-auto p-6 bg-white rounded-lg shadow-lg mt-8">
+        <table class="min-w-full table-auto">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="px-6 py-4 text-lg">Week</th>
+                    <th class="px-6 py-4 text-lg">Publication Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="bg-gray-100">
+                    <td class="px-6 py-4 text-gray-800">Week 1</td>
+                    <td class="px-6 py-4 text-gray-800">Monday, December 2, 2024</td>
+                </tr>
+                <tr class="bg-white">
+                    <td class="px-6 py-4 text-gray-800">Week 2</td>
+                    <td class="px-6 py-4 text-gray-800">Monday, December 9, 2024</td>
+                </tr>
+                <tr class="bg-gray-100">
+                    <td class="px-6 py-4 text-gray-800">Week 3</td>
+                    <td class="px-6 py-4 text-gray-800">Monday, December 16, 2024</td>
+                </tr>
+                <tr class="bg-white">
+                    <td class="px-6 py-4 text-gray-800">Week 4</td>
+                    <td class="px-6 py-4 text-gray-800">Monday, December 23, 2024</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6 mt-8">
+        <p class="text-sm">&copy; 2024 Newspaper. All rights reserved.</p>
+        <div class="mt-4">
+            <a href="#" class="text-white mx-4 hover:text-gray-400 transition duration-300">Facebook</a>
+            <a href="#" class="text-white mx-4 hover:text-gray-400 transition duration-300">Twitter</a>
+            <a href="#" class="text-white mx-4 hover:text-gray-400 transition duration-300">Instagram</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

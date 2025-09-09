@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var result = document.getElementById('result');
+            document.getElementById('plus').addEventListener('click', function() {
+                result.textContent = parseInt(result.textContent) + 1;
+            });
+            document.getElementById('minus').addEventListener('click', function() {
+                result.textContent = parseInt(result.textContent) - 1;
+            });
+        };
+    </script>
+</head>
+<body>
+    <button id="plus">+</button>
+    <button id="minus">-</button>
+    <p id="result">0</p>
+</body>
+</html>

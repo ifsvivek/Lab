@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Creation</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 3px solid #A9D6F2;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #A9D6F2;
+            color: black;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Sl No.</th>
+            <th colspan="2">Full Name</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Vivek</td>
+            <td>Sharma</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Yuvan</td>
+            <td>Shanker raja</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Roshan</td>
+            <td rowspan="2">RK</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Prajwal</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Prajwal</td>
+            <td>M</td>
+        </tr>
+    </table>
+</body>
+
+</html>

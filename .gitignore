@@ -1,0 +1,9 @@
+**/*.exe
+**/*.class
+.vscode
+.env
+.nomedia
+target/
+.venv/
+.gradle/
+__pycache__/
