@@ -1,7 +1,3 @@
-This response extracts the code snippets found within the source material covering Topic 6.2 ("Installing Python") up to Topic 6.11 ("Python Packages of Interest for IoT") in Chapter 6: "IoT Systems - Logical Design using Python".
-
----
-
 ### 6.2 Installing Python
 
 **Box 6.1: Installing Python on Ubuntu Linux**
